@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link data-require="jqueryui@*" data-semver="1.10.0" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/css/smoothness/jquery-ui-1.10.0.custom.min.css" />
+		<script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js"></script>
+		<style>
+			.draggable{
+				width:90px;
+				height:90px;
+				border:solid 1px white;
+				float:left;
+			}
+			.holder{
+				width:90px;
+				height:90px;
+				margin:10px;
+				float:left;
+			}
+			.formula{
+				background-color:Beige;
+			}
+			.number{
+				background-color:Gainsboro;
+			}
+			.numberDroppable{background-color:green;}
+			.formulaDroppable{background-color:yellow;}
+			.area1,.area2{float:left}
+			.area1{
+				border:solid 1px black;
+				width:300px;
+				height:300px
+			}
+			.area2{
+				border:solid 1px black;
+				width:200px;
+				height:300px
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Hello Plunker!</h1>
+		<div class="">
+			<div class="area1">
+				<div id="drop-formula-1" class="holder formulaDroppable"></div>
+				<div id="drop-formula-2" class="holder formulaDroppable"></div>
+				<div id="drop-formula-3" class="holder formulaDroppable"></div>
+				<div id="drop-number-1" class="holder numberDroppable"></div>
+				<div id="drop-number-2" class="holder numberDroppable"></div>
+				<div id="drop-number-3" class="holder numberDroppable"></div>
+			</div>
+			<div class="area2">
+				<div class="draggable formula">f1</div>
+				<div class="draggable formula">f2</div>
+				<div class="draggable formula">f3</div>
+				<div class="draggable number">n1</div>
+				<div class="draggable number">n2</div>
+				<div class="draggable number">n3</div>
+				<div class="draggable number">n4</div>
+			</div>
+		</div>
+		<script>
+			var obj={
+				revert:'invalid',
+				start:function(event,ui){
+					removeCustomClasses($(this));
+					},
+					stop:function(event,ui){
+						var tar=$(this);
+						if(tar.hasClass('out')){
+							resetElem(tar);
+						}
+					}
+				}
+				$('.draggable.formula').draggable(obj)
+				$('.draggable.number').draggable(obj);
+
+				makeItDroppable($('.numberDroppable'),'.number')
+				makeItDroppable($('.formulaDroppable'),'.formula')
+
+				function resetElem (tar){
+					return removeCustomClasses($(tar))
+					.draggable('destroy')
+					.removeAttr('style')
+					.draggable(obj)
+				}
+				function removeCustomClasses(tar,addThis){
+					addThis=!addThis?'':addThis;
+					return tar
+					.removeClass('out in drop-formula-1 drop-formula-2 drop-formula-3  drop-number-1 drop-number-2 drop-number-3')
+					addClass(addThis);
+				}
+
+				function makeItDroppable(tar,acceptClass){
+					return tar.droppable({
+						accept:acceptClass,
+						tolerance:'pointer',
+						drop: function(event, ui) {
+							console.log('lalal')
+							var par=$(this);
+							var className=par.attr('id');
+							var prev=$('.'+className);
+							if(prev.length>0){
+								resetElem(prev[0]);
+							}
+
+							$(ui.draggable).offset(par.offset()).draggable('option','revert',false).addClass(className)
+							},
+							out:function(event,ui){
+								$(ui.draggable).addClass('out').removeClass('in');
+								},
+							over:function(event,ui){
+									$(ui.draggable).addClass('in').removeClass('out');
+							}
+						})
+				}
+			</script>
+				</body>
+			</html>

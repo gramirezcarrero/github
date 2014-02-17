@@ -1,0 +1,106 @@
+body{
+	overflow: hidden;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+	/*background-color:#76AB53;*/
+}
+
+#container{
+	position: relative;
+	width: 1024px;
+	height: 674px;
+	margin: auto;
+	/*background-color: #999;*/
+	overflow: hidden;
+}
+
+.left-content{
+	float: left;
+	width: 584px;
+	height: 100%;
+	padding: 40px 23px 40px;
+/*	background-color: #669C44;*/
+	border-right: 2px solid #588837;
+	box-sizing: border-box;
+}
+
+.right-content{
+	position: relative;
+	float: left;
+	width: 440px;
+	height: 100%;
+	padding: 129px 81px 40px;
+	box-sizing: border-box;
+}
+
+.placeholder-bg{
+	position: absolute;
+	right: 0px;
+/*	background-color: #76AB53;*/
+	background-image: url(../images/board/blackboard.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.placeholder{
+	float: left;
+	width: 130px;
+	height: 43px;
+	margin: 0px 4px 4px 0px;
+	/*background-color: #7FB45C;
+}
+
+	.row-holder{
+	width: 100%;
+	height: 109px;
+	margin-bottom: 4px;
+	/*background-color: #000;*/
+}
+
+.info-graph{
+	float: left;
+	width: 137px;
+	height: 109px;
+	margin-right: 4px;
+}
+
+.drop{
+	float: left;
+	width: 130px;
+	height: 43px;
+	margin-right: 4px;
+	border-radius: 4px;
+}
+
+.drop-info{
+	background: -webkit-linear-gradient(top, #5c8d3e 0%,#669c44 100%);
+	-webkit-box-shadow: inset 2px 2px 1px #4F7935, inset -2px -2px 1px #7AA85C;
+}
+
+.drop-formula{
+	/*background: -webkit-linear-gradient(top, #7FAB5F 0%,#8DBE6C 100%);
+	-webkit-box-shadow: inset 2px 2px 1px #4F7935, inset -2px -2px 1px #96CC72; */
+	margin-top: 74px;
+	margin-left: 8px;
+}
+
+.drag{
+	float: left;
+	width: 130px;
+	height: 43px;
+	margin: 0px 8px 15px 0px;
+}
+.formula1 {
+	background-size: cover;
+	background-image: url(../images/card1@2x.png);
+}
+
+.drop-holder{
+	width: 148px;
+	height: 143px;
+	float: left;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 0px 23px 15px 4px;
+}
+.holder1{
+}

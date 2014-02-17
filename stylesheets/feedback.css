@@ -1,0 +1,220 @@
+body{
+}
+.contentFeedback{
+	position: absolute;
+	width: 340px;
+	height: 40px;
+	bottom: 5px;
+	right: -20px;
+	overflow: hidden;
+}
+
+.btReset,.btInfo,.btFeedback{
+	float: right;
+	width: 34px;
+	height: 34px;
+	cursor: pointer;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	-webkit-tap-highlight-background:<background>;
+}
+
+.btReset{margin-right: 50px;}
+.icoReset{background-image: url('../images/base/btResetOn@2x.png');}
+
+.icoResetMove{
+	-webkit-animation: reset 1s;
+}
+
+@-webkit-keyframes reset {
+	0%{
+		-webkit-transform: rotate(0deg);
+		background-image: url('../images/base/btResetOn@2x.png');
+	}
+	50%{
+		
+		background-image: url('../images/base/btResetOff@2x.png');
+		
+	}
+	100%{
+		-webkit-transform: rotate(-360deg);
+		background-image: url('../images/base/btResetOn@2x.png');
+	}
+}
+
+.btInfo,.btFeedback{margin-right: 17px;}
+
+.btFeedback{
+	cursor: pointer;
+}
+
+.icoReset,.icoFeed{
+	background-position: center center;
+	background-size: 100%;
+	width: 34px;
+	height: 34px;
+}
+
+.icoInfo{
+	width: 29px;
+	height: 31px;
+	background-position: center center;
+	background-size: 100%;
+}
+
+.icoInfo{background-image: url('../images/base/btInfoOff@2x.png');}
+.icoInfoMove{background-image: url('../images/base/btInfoOn@2x.png');}
+
+.icoFeed{background-image: url('../images/base/btFeedOff@2x.png');}
+.icoFeedMove{background-image: url('../images/base/btFeedOn@2x.png');}
+
+.score{
+	float: right;
+	height: 34px;
+	width: 130px;
+	border-radius: 20px;
+	background-color: rgba(27,27,27,0.2);
+	overflow: hidden;
+	margin-right: 12px;
+	display: none;
+}
+
+#contCorrect,#contIncorrect{
+	width: 49%;
+	height: 100%;
+	float: left;
+	text-align: center;
+	vertical-align: middle;
+	font-family: 'GillSans-Light';
+	font-size: 18px;
+	padding-top: 7px;
+}
+
+/*in case you have a lighter background you need to use this color : #177100; for #contCorrect and color: #923e3e; for #contIncorrect*/
+#contCorrect{
+	border-right: 1px solid rgba(0,0,0,0.3);
+	color: #33ff00;	
+}
+#contIncorrect{
+	color: #ffcbcb;
+}
+
+#contCorrect img{
+	width: 17px;
+	height: 18px;
+}
+#contIncorrect img{
+	width: 15px;
+	height: 17px;
+}
+
+.score div img{
+	vertical-align: middle;
+	margin-left: 5px;
+	margin-top: -5px;
+}
+
+/* Information modal */
+.back{
+	background:black;
+}
+
+._iModalBack{
+	display: none;
+	height:704px;width: 1024px;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	z-index: 2000;
+
+}
+
+.Center_iModal{
+	position: relative;width: 100%;height: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+}
+
+._iModalHeader{
+	height: 50px;
+	width: 100%;
+	position: absolute;
+	z-index: 300;
+}
+
+.AbsoluteCenter_iModal {
+	width: 460px;
+	border: 2px solid #7ea0c6;
+	background: -webkit-radial-gradient(center,circle farthest-side,#597ca5 0,#3d5485 100%);
+}
+
+._iModalHeader .icoInfo{
+	margin-left: 10px;
+	margin-top: 10px;
+	position: relative;
+	float: left;
+}
+
+.icoClose{
+	font-size: 16px;
+	float: right;
+	padding-right: 10px;
+	font-weight: normal;
+	width: 16px;
+	height: 20px;
+	text-align: center;
+	padding-left: 20px;
+	padding-top: 5px;
+	color: white;
+	font-family: BanglaSangamMN;
+	padding-bottom: 10px;
+	cursor: pointer;
+}
+
+._iModalBody{
+	padding: 20px 50px;
+	font-weight: 100;
+	color: #fff;
+	font-size: 24px;
+	line-height: 30px;
+	text-shadow: 0 1px 0 rgba(0,0,0,.7);
+}
+
+._iModalBody img{
+	display: block;
+	margin: 10px auto;
+	border: none;
+	cursor: pointer;
+}
+
+/*new class efects animation*/
+._back{
+	background-color: black;
+	height:100%;width: 100%;
+	position: absolute;
+	opacity: 0.7;
+	transition-property: opacity;
+	transition-duration: .4s;	
+	-webkit-transition-property: opacity;
+	-webkit-transition-duration: .4s;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 2000;
+
+}
+.AbsoluteCenter_iModal{
+	-webkit-transition: .5s cubic-bezier(0.25, 0.46, 0.45, 0.94) ;
+	-webkit-transform: translateY(-900px); 
+}
+.AbsoluteCenter_iModalAnimate{
+	-webkit-transform: translateY(0px); 
+
+}
+._backClose{
+opacity: 0;
+}
+
+.hack{
+    background: black;
+}
